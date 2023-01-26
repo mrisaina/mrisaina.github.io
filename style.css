@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.header {
+    background-image: url(/shop_web/img/background-header.png);
+    background-repeat: repeat-x;
+    height: 100px;
+}
+
+.nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    padding-left: 100px;
+}
+
+.nav-div_menu li {
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #2c71b8;
+    height: 50px;
+}
+
+.nav-div_menu li:hover {
+    border: none;
+}
+
+.nav-div_menu li:last-of-type {
+    border-right: 1px solid #2c71b8;
+}
+
+.nav-div_menu li:hover,
+.nav-div_menu li:hover a,
+.nav-div_menu li:hover svg {
+    background-color: #2c71b8;
+    color: #fff;
+}
+
+.nav-div_menu li:hover svg {
+    fill: #fff;
+    transform: rotate(180deg);
+}
+
+.nav-div_menu svg {
+    margin-left: 5px;
+}
+
+/* dropdown */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    padding-top: 5px;
+    z-index: 1;
+}
+
+.dropdown_content a {
+    display: block;
+    padding: 12px 18px;
+    text-align: left;
+}
+
+.nav-div_menu .li_dropdown:hover .dropdown_content {
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown_content:hover a:hover {
+    background-color: #fff;
+    color: #2c71b8;
+}
+
+/* menu */
+
+.nav-div_menu a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+    color: #2c71b8;
+}
+
+.nav-div_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[name='search'] {
+    background-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+    border-color: #2c71b8;
+
+    position: relative;
+    width: 200px;
+    height: 40px;
+    padding-left: 20px;
+}
+
+input[name='search']::placeholder {
+    color: #2c71b8;
+}
+
+button[name='searchBtn'] {
+    background-image: url(/shop_web/img/lope.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #2c71b8;
+
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-left: 150px;
+    border: 0px;
+}
+
+button[name='cart'] {
+    background-image: url(/shop_web/img/cart.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border: 0px;
+}
