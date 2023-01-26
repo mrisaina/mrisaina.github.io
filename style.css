@@ -34,11 +34,13 @@ ul {
 
 .nav-div_menu li {
     width: 140px;
+    height: 50px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     border-left: 1px solid #2c71b8;
-    height: 50px;
 }
 
 .nav-div_menu li:hover {
@@ -48,6 +50,8 @@ ul {
 .nav-div_menu li:last-of-type {
     border-right: 1px solid #2c71b8;
 }
+
+/* menu items on hover + arrow icon */
 
 .nav-div_menu li:hover,
 .nav-div_menu li:hover a,
@@ -64,6 +68,16 @@ ul {
 .nav-div_menu svg {
     margin-left: 5px;
 }
+
+.nav-div_menu a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+    color: #2c71b8;
+
+    text-decoration: none;
+}
+
+/* end of section with menu items on hover + arrow */
 
 /* dropdown */
 
@@ -97,14 +111,9 @@ ul {
     color: #2c71b8;
 }
 
-/* menu */
+/* end of dropdown */
 
-.nav-div_menu a {
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-size: 21px;
-    color: #2c71b8;
-}
+/* search & cart  */
 
 .nav-div_search {
     display: flex;
@@ -114,8 +123,10 @@ ul {
 
 input[name='search'] {
     background-color: transparent;
+
     font-family: 'Roboto', sans-serif;
     font-size: 21px;
+
     border-color: #2c71b8;
 
     position: relative;
@@ -146,7 +157,10 @@ button[name='cart'] {
     background-repeat: no-repeat;
     background-position: center;
     background-color: #fff;
+
     width: 40px;
     height: 40px;
     border: 0px;
 }
+
+/* end of search & cart section */
