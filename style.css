@@ -186,6 +186,7 @@ button[name='searchBtn'] {
     background-repeat: no-repeat;
     background-position: center;
     background-color: #2c71b8;
+    cursor: pointer;
 
     width: 30px;
     height: 30px;
@@ -203,6 +204,7 @@ button[name='cart'] {
     background-repeat: no-repeat;
     background-position: center;
     background-color: #fff;
+    cursor: pointer;
 
     width: 40px;
     height: 40px;
@@ -373,11 +375,13 @@ button[name='cart'] {
 button[name="zoomBtn"]:hover {
     background-color: #2c71b8;
     background-image: url(./img/zoom-white.png);
+    cursor: pointer;
 }
 
 button[name="likeBtn"]:hover {
     background-color: #2c71b8;
     background-image: url(./img/like-white.png);
+    cursor: pointer;
 }
 
 button[name="zoomBtn"] {
@@ -470,4 +474,5 @@ button[name="addToCartBtn"]:hover {
     background-color: #5a91c8;
     color: white;
     border: none;
+    cursor: pointer;
 }
