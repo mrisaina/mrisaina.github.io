@@ -156,7 +156,7 @@ body {
     align-items: center;
 }
 
-.search {
+form {
     width: 200px;
     height: 40px;
     border: 1px solid #2c71b8;
