@@ -62,7 +62,7 @@
                     <div class="search">
                          <form action="" class="header_search_container">
                             <input type="text" name='search' placeholder="search">
-                            <button type="submit" name='searchBtn'></button>
+                            <button type="submit" class='btn-search'></button>
                          </form>
                     </div>
                     <div class="cart">
@@ -448,6 +448,41 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-4">
+                            <div class="product">
+                                <div class="product-img">
+                                    <img src="./img/prod_1.png" alt="prod-1">
+                                    <div class="zoom">
+                                        <button class="zoomBtn"></button>
+                                    </div>
+                                    <div class="like">
+                                        <button class="likeBtn"></button>
+                                    </div>
+                                </div>
+                                <div class="product-details">
+                                    <div class="product_title">#9 Device Name</div>
+                                    <div class="product_desc"> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                        <br>
+                                    </div>
+                                    <div class="product_features">
+                                        <span class="bold_details_text">Type:</span> Laptop
+                                    </div>
+                                    <div class="product_features">
+                                        <span class="bold_details_text">Screen Size:</span> 7 inches
+                                    </div>
+                                    <div class="product_features">
+                                        <span class="bold_details_text">Ram:</span> 1 GB
+                                    </div>
+                                </div>
+                                <div class="product_price bold_details_text">
+                                    $599 <sup>25</sup>
+                                </div>
+                                <div class="btn_container">
+                                    <button class="btn btn-more-details">More details</button>
+                                    <button class="btn btn-add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -466,16 +501,18 @@
                 </div>
                 <h3>Please call for more details</h3>
                 <div class="form-field">
-                    <input type="text" placeholder="Your name">
+                    <input name="userName" type="text" placeholder="Your name">
+                    <p class="validation-message">Name Field is required</p>
                 </div>
                 <div class="form-field">
-                    <input type="text" placeholder="Your phone">
+                    <input name="phone" type="text" placeholder="Your phone">
+                    <p class="validation-message">Phone Field is required</p>
                 </div>
-                <button>Send</button>
+                <button class="btn-send-message">Send</button>
             </form>
         </div>
     </div>
-    <script src="./app.js"></script>
+    <script src="./app.js" type="module"></script>
 </body>
 
 </html>
