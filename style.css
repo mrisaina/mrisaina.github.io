@@ -122,6 +122,7 @@ body {
 
 .product_dropdown:hover {
     border: none;
+    background-color: #2c71b8;
 }
 
 .product_dropdown:hover .product_dropdown_content {
@@ -134,17 +135,13 @@ body {
     fill: white
 }
 
-.product_dropdown:hover .product_dropdown_content a {
+.product_dropdown:hover a {
     color: white;
 }
 
-.product_dropdown .product_dropdown_content a:hover {
+.product_dropdown_content:hover a:hover {
     background-color: white;
     color: #2c71b8;
-}
-
-.product_dropdown:has(> .product_dropdown_content a:hover) {
-    background-color: #2c71b8;
 }
 
 /* end of the dropdown */
