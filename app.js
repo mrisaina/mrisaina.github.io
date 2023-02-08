@@ -43,16 +43,7 @@ $$.closeBtn.addEventListener("click", () => {
 
 $$.likeBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    if (
-      btn.style.backgroundColor === "transparent" ||
-      btn.style.backgroundColor === ""
-    ) {
-      btn.style.backgroundColor = "#2c71b8";
-      btn.style.backgroundImage = "url(./img/like-white.png)";
-    } else {
-      btn.style.backgroundColor = "transparent";
-      btn.style.backgroundImage = "url(./img/like.png)";
-    }
+    btn.classList.toggle("likeBtnClick");
   });
 });
 
@@ -66,6 +57,14 @@ const checkNameInput = () => {
 const checkPhoneInput = () => {
   if ($$.phoneInput.value.length === 0) return false;
   return true;
+};
+
+const checkModalSize = () => {
+  if (document.querySelector(".modal-block").style.height == "230px") {
+    document.querySelector(".modal-block").style.height = "210px";
+  } else if (document.querySelector(".modal-block").style.height == "210px") {
+    document.querySelector(".modal-block").style.height = "200px";
+  }
 };
 
 const match = /^\d+$/;
@@ -83,25 +82,21 @@ $$.sendMessageBtn.addEventListener("click", () => {
     $$.phoneInput.style.border = "1px solid red";
     document.querySelector(".modal-block").style.height = "210px";
   }
+
+  if (checkPhoneInput() && !$$.phoneInput.value.match(match)) {
+    document.querySelector('[name="phone"]').nextElementSibling.textContent =
+      "Phone Field can contain only digits";
+  }
   if (
     !checkNameInput() &&
     (!checkPhoneInput() || !$$.phoneInput.value.match(match))
   ) {
     document.querySelector(".modal-block").style.height = "230px";
   }
-
-  if (!$$.phoneInput.value.match(match)) {
-    document.querySelector('[name="phone"]').nextElementSibling.textContent =
-      "Phone Field can contain only digits";
-  }
 });
 
 $$.nameInput.addEventListener("change", () => {
-  if (document.querySelector(".modal-block").style.height == "230px") {
-    document.querySelector(".modal-block").style.height = "210px";
-  } else if (document.querySelector(".modal-block").style.height == "210px") {
-    document.querySelector(".modal-block").style.height = "200px";
-  }
+  checkModalSize();
   if ($$.validationMessages[0].style.display == "block") {
     $$.validationMessages[0].style.display = "none";
     $$.nameInput.style.border = "1px solid black";
@@ -110,11 +105,7 @@ $$.nameInput.addEventListener("change", () => {
 });
 
 $$.phoneInput.addEventListener("change", () => {
-  if (document.querySelector(".modal-block").style.height == "230px") {
-    document.querySelector(".modal-block").style.height = "210px";
-  } else if (document.querySelector(".modal-block").style.height == "210px") {
-    document.querySelector(".modal-block").style.height = "200px";
-  }
+  checkModalSize();
   if ($$.validationMessages[1].style.display == "block") {
     $$.validationMessages[1].style.display = "none";
     $$.phoneInput.style.border = "1px solid black";
