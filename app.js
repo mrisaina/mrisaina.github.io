@@ -1,15 +1,20 @@
 import { $$ } from "./selectors.js";
-// let productsCountEL = document.querySelector("#products-count");
-// let addToCartBtns = document.querySelectorAll(".btn-add-to-cart");
 
-// let moreDetailsBtns = document.querySelectorAll(".btn-more-details");
-// let modal = document.querySelector(".modal");
+function openModal() {
+  $$.modal.classList.add("show");
+  $$.modal.classList.remove("hide");
+}
 
-// let closeBtn = document.querySelector(".btn-close");
+function closeModal() {
+  $$.modal.classList.add("hide");
+  $$.modal.classList.remove("show");
+}
 
-// let likeBtns = document.querySelectorAll(".likeBtn");
-
-// let sendMessageBtn = document.querySelector(".btn-send-message");
+$$.modal.addEventListener("click", function (e) {
+  if (e.target === $$.modal) {
+    closeModal();
+  }
+});
 
 $$.addToCartBtns.forEach((btn) =>
   btn.addEventListener("click", () => {
@@ -19,21 +24,23 @@ $$.addToCartBtns.forEach((btn) =>
 
 $$.moreDetailsBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    $$.modal.style.display = "block";
+    openModal();
   });
 });
 
 $$.closeBtn.addEventListener("click", () => {
-  $$.modal.style.display = "none";
+  closeModal();
   if ($$.sendMessageBtn.disabled) {
     $$.sendMessageBtn.disabled = false;
   }
   if (!checkNameInput()) {
-    $$.validationMessages[0].style.display = "none";
+    $$.validationMessages[0].classList.remove("show");
+    $$.validationMessages[0].classList.add("hide");
     $$.nameInput.style.border = "1px solid black";
   }
   if (!checkPhoneInput() || !$$.phoneInput.value.match(match)) {
-    $$.validationMessages[1].style.display = "none";
+    $$.validationMessages[1].classList.remove("show");
+    $$.validationMessages[1].classList.add("hide");
     $$.phoneInput.style.border = "1px solid black";
   }
   document.querySelector(".modal-block").style.height = "200px";
@@ -45,6 +52,13 @@ $$.likeBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     btn.classList.toggle("likeBtnClick");
   });
+});
+
+window.addEventListener("scroll", function scrolling() {
+  if (window.scrollY >= document.body.scrollHeight / 2) {
+    openModal();
+    window.removeEventListener("scroll", scrolling);
+  }
 });
 
 // form validation
@@ -72,13 +86,15 @@ const match = /^\d+$/;
 $$.sendMessageBtn.addEventListener("click", () => {
   if (!checkNameInput()) {
     $$.sendMessageBtn.disabled = true;
-    $$.validationMessages[0].style.display = "block";
+    $$.validationMessages[0].classList.remove("hide");
+    $$.validationMessages[0].classList.add("show");
     $$.nameInput.style.border = "1px solid red";
     document.querySelector(".modal-block").style.height = "210px";
   }
   if (!checkPhoneInput() || !$$.phoneInput.value.match(match)) {
     $$.sendMessageBtn.disabled = true;
-    $$.validationMessages[1].style.display = "block";
+    $$.validationMessages[1].classList.remove("hide");
+    $$.validationMessages[1].classList.add("show");
     $$.phoneInput.style.border = "1px solid red";
     document.querySelector(".modal-block").style.height = "210px";
   }
@@ -97,8 +113,9 @@ $$.sendMessageBtn.addEventListener("click", () => {
 
 $$.nameInput.addEventListener("change", () => {
   checkModalSize();
-  if ($$.validationMessages[0].style.display == "block") {
-    $$.validationMessages[0].style.display = "none";
+  if ($$.validationMessages[0].classList.contains("show")) {
+    $$.validationMessages[0].classList.remove("show");
+    $$.validationMessages[0].classList.add("hide");
     $$.nameInput.style.border = "1px solid black";
     $$.sendMessageBtn.disabled = false;
   }
@@ -106,9 +123,19 @@ $$.nameInput.addEventListener("change", () => {
 
 $$.phoneInput.addEventListener("change", () => {
   checkModalSize();
-  if ($$.validationMessages[1].style.display == "block") {
-    $$.validationMessages[1].style.display = "none";
+  if ($$.validationMessages[1].classList.contains("show")) {
+    $$.validationMessages[1].classList.remove("show");
+    $$.validationMessages[1].classList.add("hide");
     $$.phoneInput.style.border = "1px solid black";
     $$.sendMessageBtn.disabled = false;
   }
+});
+
+//slick
+
+$(".slider-block").slick({
+  dots: true,
+  arrows: true,
+  prevArrow: '<div class="slick-prev"></div>',
+  nextArrow: '<div class="slick-next"></div>',
 });
