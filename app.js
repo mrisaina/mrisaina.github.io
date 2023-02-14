@@ -61,6 +61,10 @@ window.addEventListener("scroll", function scrolling() {
   }
 });
 
+AOS.init();
+
+// setTimeout(openModal, 5000);
+
 // form validation
 
 const checkNameInput = () => {

@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -37,13 +38,7 @@
                             <li><a href="">Home</a></li>
                             <li class="product_dropdown">
                                 <a href="">Products
-                                    <svg height="10px" id="Layer_1" style="enable-background:new 0 0 512 512;"
-                                        version="1.1" fill='#2c71b8' viewBox="0 0 512 512" width="10px"
-                                        xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <path
-                                            d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z" />
-                                    </svg>
+                                    <div class="dropdown-arrow"></div>
                                 </a>
 
                                 <ul class="product_dropdown_content">
@@ -134,24 +129,9 @@
                             <div class="breadcrumbs">
                                 <ul class="breadcrumbs_list">
                                     <li><a href="#">Home</a></li>
-
-                                    <svg height="10px" id="Layer_1" style="enable-background:new 0 0 512 512;"
-                                        version="1.1" fill='#2c71b8' viewBox="0 0 512 512" width="10px"
-                                        xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <path
-                                            d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z" />
-                                    </svg>
-
+                                    <img src="./img/arrow-breadcrumbs.svg" alt="arrow">
                                     <li><a href="#">Products</a></li>
-
-                                    <svg height="10px" id="Layer_1" style="enable-background:new 0 0 512 512;"
-                                        version="1.1" fill='#2c71b8' viewBox="0 0 512 512" width="10px"
-                                        xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <path
-                                            d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z" />
-                                    </svg>
+                                    <img src="./img/arrow-breadcrumbs.svg" alt="arrow">
 
                                     <li><a href="#" class="nav-line_last_section">Laptops and Tablets</a></li>
                                 </ul>
@@ -165,13 +145,7 @@
                                 <div class="sorting_dropdown">
                                     <div class="sorting">
                                         <a href="">sort by
-                                            <svg height="10px" id="Layer_1" style="enable-background:new 0 0 512 512;"
-                                                version="1.1" fill='#2c71b8' viewBox="0 0 512 512" width="10px"
-                                                xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                <path
-                                                    d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9  c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3  z" />
-                                            </svg>
+                                           <img src="./img/arrow-white-sort.svg" alt="arrow">
                                         </a>
                                     </div>
 
@@ -186,14 +160,17 @@
                     </div>
                     <div class="row">
                         <div class="col-4">
-                            <div class="product">
+                            <div class="product" data-aos="fade-up">
                                 <div class="product-img">
-                                    <img src="./img/prod_1.png" alt="prod-1">
-                                    <div class="zoom">
-                                        <button class="zoomBtn"></button>
-                                    </div>
-                                    <div class="like">
-                                        <button class="likeBtn"></button>
+                                    <div class="flex-img">
+                                        <img src="./img/prod_1.png" alt="prod-1">
+
+                                        <div class="zoom">
+                                            <button class="zoomBtn"></button>
+                                        </div>
+                                        <div class="like">
+                                            <button class="likeBtn"></button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="product-details">
@@ -551,6 +528,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./app.js" type="module"></script>
 </body>
 
