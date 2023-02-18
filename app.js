@@ -61,10 +61,6 @@ window.addEventListener("scroll", function scrolling() {
   }
 });
 
-AOS.init();
-
-// setTimeout(openModal, 5000);
-
 // form validation
 
 const checkNameInput = () => {
@@ -143,3 +139,59 @@ $(".slider-block").slick({
   prevArrow: '<div class="slick-prev"></div>',
   nextArrow: '<div class="slick-next"></div>',
 });
+
+// counter
+
+let decrementBtns = document.querySelectorAll(".decrement-button");
+let incrementBtns = document.querySelectorAll(".increment-button");
+let productsInput = document.querySelectorAll(".product-quantity input");
+let array = [];
+
+incrementBtns.forEach((el, i) => {
+  array.push(Array(el, decrementBtns[i], productsInput[i]));
+});
+
+class Counter {
+  constructor(array) {
+    array.forEach((comb) => {
+      let incrementBtn = comb[0];
+      let decrementBtn = comb[1];
+      let inputField = comb[2];
+      let _this = Object.assign({}, this);
+
+      _this.domRef = {
+        incrementBtn,
+        decrementBtn,
+        inputField,
+      };
+
+      _this.toggleButtonState = function () {
+        let count = _this.domRef.inputField.value;
+        _this.domRef.decrementBtn.disabled = count <= 1;
+        _this.domRef.incrementBtn.disabled = count >= 10;
+      };
+      _this.toggleButtonState();
+
+      _this.increment = function () {
+        _this.domRef.inputField.value = +_this.domRef.inputField.value + 1;
+        _this.toggleButtonState();
+      };
+      _this.decrement = function () {
+        _this.domRef.inputField.value = +_this.domRef.inputField.value - 1;
+        _this.toggleButtonState();
+      };
+
+      _this.domRef.decrementBtn.addEventListener(
+        "click",
+        _this.decrement.bind(_this)
+      );
+
+      _this.domRef.incrementBtn.addEventListener(
+        "click",
+        _this.increment.bind(_this)
+      );
+    });
+  }
+}
+
+const counter1 = new Counter(array);

@@ -720,3 +720,8 @@ input[type='checkbox']:checked+label::before {
 .hide {
     display: none;
 }
+
+.product-quantity {
+    text-align: center;
+    margin-top: 20px;
+}
